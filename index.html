@@ -1,988 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yossef Mohamed Ali - System Administrator Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --success-color: #2ecc71;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f7fa;
-            color: var(--dark-color);
-            line-height: 1.6;
-        }
-
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .header-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,100 L0,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
-            background-size: cover;
-            opacity: 0.2;
-            z-index: 1;
-        }
-
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            margin-bottom: 1.5rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .title {
-            color: var(--light-color);
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            color: white;
-            background-color: rgba(255, 255, 255, 0.2);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background-color: white;
-            color: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-
-        /* Navigation */
-        nav {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .nav-logo {
-            color: var(--primary-color);
-            font-weight: bold;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--dark-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary-color);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 4rem 0;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-
-        .section-title h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary-color);
-            margin: 0 auto;
-        }
-
-        /* About Section */
-        .about-content {
-            display: flex;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary-color);
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .skill {
-            background-color: var(--light-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            color: var(--dark-color);
-        }
-
-        .about-img {
-            flex: 1;
-            text-align: center;
-        }
-
-        .about-img img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Experience Section */
-        .experience-timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            padding-left: 50px;
-        }
-
-        .experience-timeline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 25px;
-            height: 100%;
-            width: 2px;
-            background-color: var(--secondary-color);
-        }
-
-        .experience-item {
-            position: relative;
-            margin-bottom: 2.5rem;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: -38px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: var(--secondary-color);
-            border: 4px solid white;
-            box-shadow: 0 0 0 3px var(--secondary-color);
-        }
-
-        .experience-date {
-            font-style: italic;
-            color: var(--accent-color);
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .experience-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .experience-company {
-            font-weight: bold;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-description {
-            background-color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-img {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .project-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .project-card:hover .project-img img {
-            transform: scale(1.1);
-        }
-
-        .project-info {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-
-        .project-description {
-            margin-bottom: 1rem;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .tech-item {
-            background-color: var(--light-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: var(--dark-color);
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-links a {
-            display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                color: var(--secondary-color);
-                text-decoration: none;
-                font-weight: 500;
-                transition: color 0.3s;
-            }
-
-            .project-links a:hover {
-                color: var(--primary-color);
-            }
-
-            /* Certifications Section */
-            .certifications-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 2rem;
-            }
-
-            .cert-card {
-                background-color: white;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-                display: flex;
-                flex-direction: column;
-                height: 100%;
-            }
-
-            .cert-header {
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                color: white;
-                padding: 1.5rem;
-                text-align: center;
-            }
-
-            .cert-title {
-                font-size: 1.2rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .cert-issuer {
-                font-size: 0.9rem;
-                opacity: 0.9;
-            }
-
-            .cert-body {
-                padding: 1.5rem;
-                flex-grow: 1;
-            }
-
-            .cert-date {
-                font-style: italic;
-                color: var(--accent-color);
-                margin-bottom: 1rem;
-                display: block;
-            }
-
-            .cert-id {
-                font-size: 0.8rem;
-                color: #666;
-                margin-bottom: 1rem;
-                display: block;
-            }
-
-            .cert-link {
-                display: inline-flex;
-                align-items: center;
-                gap: 0.5rem;
-                color: var(--secondary-color);
-                text-decoration: none;
-                font-weight: 500;
-                transition: color 0.3s;
-                margin-top: 1rem;
-            }
-
-            .cert-link:hover {
-                color: var(--primary-color);
-            }
-
-            /* Contact Section */
-            .contact-container {
-                display: flex;
-                gap: 3rem;
-            }
-
-            .contact-info {
-                flex: 1;
-            }
-
-            .contact-card {
-                background-color: white;
-                padding: 1.5rem;
-                border-radius: 8px;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-                margin-bottom: 1.5rem;
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-            }
-
-            .contact-icon {
-                width: 50px;
-                height: 50px;
-                background-color: var(--light-color);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: var(--secondary-color);
-                font-size: 1.2rem;
-            }
-
-            .contact-form {
-                flex: 1;
-                background-color: white;
-                padding: 2rem;
-                border-radius: 8px;
-                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .form-group {
-                margin-bottom: 1.5rem;
-            }
-
-            .form-group label {
-                display: block;
-                margin-bottom: 0.5rem;
-                font-weight: 500;
-                color: var(--primary-color);
-            }
-
-            .form-group input,
-            .form-group textarea {
-                width: 100%;
-                padding: 0.8rem;
-                border: 1px solid #ddd;
-                border-radius: 4px;
-                font-size: 1rem;
-                transition: border-color 0.3s;
-            }
-
-            .form-group input:focus,
-            .form-group textarea:focus {
-                outline: none;
-                border-color: var(--secondary-color);
-            }
-
-            .form-group textarea {
-                height: 150px;
-                resize: vertical;
-            }
-
-            .submit-btn {
-                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-                color: white;
-                border: none;
-                padding: 0.8rem 2rem;
-                border-radius: 4px;
-                font-size: 1rem;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all 0.3s;
-            }
-
-            .submit-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            }
-
-            /* Footer */
-            footer {
-                background-color: var(--primary-color);
-                color: white;
-                text-align: center;
-                padding: 2rem 0;
-                margin-top: 2rem;
-            }
-
-            .footer-content {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 0 2rem;
-            }
-
-            .footer-links {
-                display: flex;
-                justify-content: center;
-                gap: 1.5rem;
-                margin: 1.5rem 0;
-            }
-
-            .footer-links a {
-                color: white;
-                text-decoration: none;
-                transition: color 0.3s;
-            }
-
-            .footer-links a:hover {
-                color: var(--secondary-color);
-            }
-
-            /* Responsive Styles */
-            @media (max-width: 992px) {
-                .about-content {
-                    flex-direction: column;
-                }
-
-                .contact-container {
-                    flex-direction: column;
-                }
-            }
-
-            @media (max-width: 768px) {
-                .nav-links {
-                    position: fixed;
-                    top: 70px;
-                    left: -100%;
-                    width: 100%;
-                    height: calc(100vh - 70px);
-                    background-color: white;
-                    flex-direction: column;
-                    align-items: center;
-                    padding: 2rem 0;
-                    transition: left 0.3s ease;
-                }
-
-                .nav-links.active {
-                    left: 0;
-                }
-
-                .hamburger {
-                    display: block;
-                }
-
-                .section-title h2 {
-                    font-size: 1.8rem;
-                }
-            }
-
-            @media (max-width: 576px) {
-                .header-content h1 {
-                    font-size: 2rem;
-                }
-
-                .header-content .title {
-                    font-size: 1.1rem;
-                }
-
-                .section-title h2 {
-                    font-size: 1.5rem;
-                }
-
-                .experience-timeline {
-                    padding-left: 30px;
-                }
-
-                .experience-item::before {
-                    left: -28px;
-                }
-            }
-        </style>
-    </head>
-    <body>
-        <!-- Header Section -->
-        <header>
-            <div class="header-bg"></div>
-            <div class="header-content">
-                <img src="https://i.imgur.com/rIKlVJm.jpg" alt="Yossef Mohamed Ali" class="profile-img">
-                <h1>Yossef Mohamed Ali</h1>
-                <p class="title">System Administrator | Network Specialist | IT Support Engineer</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </header>
-
-        <!-- Navigation -->
-        <nav>
-            <div class="nav-container">
-                <a href="#" class="nav-logo">Yossef M. Ali</a>
-                <div class="hamburger" id="hamburger">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-links" id="navLinks">
-                    <a href="#about">About</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#certifications">Certifications</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </nav>
-
-        <!-- About Section -->
-        <section id="about">
-            <div class="container">
-                <div class="section-title">
-                    <h2>About Me</h2>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <h3>System Administrator with 3 years of hands-on experience</h3>
-                        <p>I am a dedicated IT professional specializing in system administration, network management, and technical support. With a strong foundation in both Windows and Linux environments, I excel at optimizing IT infrastructure for maximum efficiency and reliability.</p>
-                        <p>My passion for technology drives me to constantly expand my knowledge and implement innovative solutions. I take pride in troubleshooting complex issues and implementing systems that empower organizations to operate smoothly and securely.</p>
-                        <div class="skills">
-                            <span class="skill">Windows Server</span>
-                            <span class="skill">Linux Administration</span>
-                            <span class="skill">Active Directory</span>
-                            <span class="skill">Networking</span>
-                            <span class="skill">Virtualization</span>
-                            <span class="skill">AWS</span>
-                            <span class="skill">Azure</span>
-                            <span class="skill">PowerShell</span>
-                            <span class="skill">Bash Scripting</span>
-                            <span class="skill">Docker</span>
-                            <span class="skill">IT Security</span>
-                            <span class="skill">Technical Support</span>
-                        </div>
-                    </div>
-                    <div class="about-img">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1115&q=80" alt="IT Infrastructure">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" style="background-color: #f9f9f9;">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Professional Experience</h2>
-                </div>
-                <div class="experience-timeline">
-                    <div class="experience-item">
-                        <span class="experience-date">2021 - Present</span>
-                        <h3 class="experience-title">System Administrator</h3>
-                        <p class="experience-company">TechSolutions MEA</p>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Managed and maintained IT infrastructure including 50+ virtual and physical servers</li>
-                                <li>Implemented and managed Active Directory, DNS, DHCP, and Group Policy</li>
-                                <li>Automated routine tasks using PowerShell and Bash scripts saving 15+ hours weekly</li>
-                                <li>Configured and maintained backup solutions with 99.9% reliability</li>
-                                <li>Provided tier 2/3 support for complex technical issues across the organization</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <span class="experience-date">2019 - 2021</span>
-                        <h3 class="experience-title">IT Support Engineer</h3>
-                        <p class="experience-company">Digital Fortress Inc.</p>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Provided technical support for 200+ users across multiple locations</li>
-                                <li>Managed Office 365 environment including Exchange Online, SharePoint, and Teams</li>
-                                <li>Implemented network monitoring tools reducing downtime by 30%</li>
-                                <li>Documented IT procedures and created knowledge base articles</li>
-                                <li>Assisted in migration from on-premises Exchange to Office 365</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <span class="experience-date">2018 - 2019</span>
-                        <h3 class="experience-title">IT Technician (Internship)</h3>
-                        <p class="experience-company">Cairo IT Services</p>
-                        <div class="experience-description">
-                            <ul>
-                                <li>Provided first-line technical support for hardware and software issues</li>
-                                <li>Assisted in maintaining network infrastructure and server rooms</li>
-                                <li>Imaged and deployed workstations and laptops for new employees</li>
-                                <li>Helped implement ticketing system that improved response times by 40%</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Recent Projects</h2>
-                </div>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" alt="Active Directory Project">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Active Directory Optimization</h3>
-                            <p class="project-description">Redesigned and optimized Active Directory structure including Group Policy implementation that standardized security policies across 200+ workstations and improved security posture.</p>
-                            <div class="project-tech">
-                                <span class="tech-item">Active Directory</span>
-                                <span class="tech-item">Group Policy</span>
-                                <span class="tech-item">PowerShell</span>
-                                <span class="tech-item">Security</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-book"></i> Documentation</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" alt="Backup Solution">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Enterprise Backup Solution</h3>
-                            <p class="project-description">Designed and implemented a comprehensive backup strategy with daily backups, offsite replication, and disaster recovery testing that achieved 99.9% data protection.</p>
-                            <div class="project-tech">
-                                <span class="tech-item">Veeam</span>
-                                <span class="tech-item">Disaster Recovery</span>
-                                <span class="tech-item">Azure Storage</span>
-                                <span class="tech-item">Automation</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fas fa-file-pdf"></i> Case Study</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-img">
-                            <img src="https://images.unsplash.com/photo-1558478551-1a378f63328e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Monitoring System">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-title">Infrastructure Monitoring System</h3>
-                            <p class="project-description">Deployed a centralized monitoring system utilizing Zabbix that reduced response time for potential issues by 60% through proactive alerts and performance tracking.</p>
-                            <div class="project-tech">
-                                <span class="tech-item">Zabbix</span>
-                                <span class="tech-item">Linux</span>
-                                <span class="tech-item">Bash</span>
-                                <span class="tech-item">Alerting</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="#"><i class="fab fa-github"></i> Configurations</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" style="background-color: #f9f9f9;">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Certifications</h2>
-                </div>
-                <div class="certifications-grid">
-                    <div class="cert-card">
-                        <div class="cert-header">
-                            <h3 class="cert-title">Microsoft Certified: Azure Administrator Associate</h3>
-                            <p class="cert-issuer">Microsoft</p>
-                        </div>
-                        <div class="cert-body">
-                            <span class="cert-date">December 2022</span>
-                            <span class="cert-id">License: MS0987654321</span>
-                            <p>Demonstrated ability to implement, manage, and monitor identity, governance, storage, compute, and virtual networks in a cloud environment.</p>
-                            <a href="#" class="cert-link"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-header">
-                            <h3 class="cert-title">CompTIA Network+</h3>
-                            <p class="cert-issuer">CompTIA</p>
-                        </div>
-                        <div class="cert-body">
-                            <span class="cert-date">June 2021</span>
-                            <span class="cert-id">License: COMP987654321</span>
-                            <p>Validated knowledge of networking concepts including troubleshooting, configuring, and managing networks.</p>
-                            <a href="#" class="cert-link"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-header">
-                            <h3 class="cert-title">AWS Certified Cloud Practitioner</h3>
-                            <p class="cert-issuer">Amazon Web Services</p>
-                        </div>
-                        <div class="cert-body">
-                            <span class="cert-date">March 2021</span>
-                            <span class="cert-id">License: AWS123987456</span>
-                            <p>Demonstrated foundational understanding of AWS Cloud concepts, services, and terminology.</p>
-                            <a href="#" class="cert-link"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Get In Touch</h2>
-                </div>
-                <div class="contact-container">
-                    <div class="contact-info">
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3>Email</h3>
-                                <p>yossefali67@gmail.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h3>Phone</h3>
-                                <p>+20 155 3041 880</p>
-                            </div>
-                        </div>
-                        <div class="contact-card">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h3>Location</h3>
-                                <p>Cairo, Egypt</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contact-form">
-                        <form id="contactForm">
-                            <div class="form-group">
-                                <label for="name">Name</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email</label>
-                                <input type="email" id="email", name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <input type="text" id="subject" name="subject" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" name="message" required></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2023 Yossef Mohamed Ali. All Rights Reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div>
-                <p>Designed with ❤️ by Yossef Mohamed Ali</p>
-            </div>
-        </footer>
-
-        <script>
-            // Mobile Navigation Toggle
-            const hamburger = document.getElementById('hamburger');
-            const navLinks = document.getElementById('navLinks');
-
-            hamburger.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-
-            // Close mobile menu when clicking on a link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                });
-            });
-
-            // Smooth scrolling for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-
-            // Contact form submission
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
-            });
-        </script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yossef Mohamed Ali - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#education">Education & Training</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <img src="your-photo.jpg" alt="Yossef Mohamed Ali" id="profile-photo" />
+        <h1>Yossef Mohamed Ali</h1>
+        <p>
+          Dedicated IT Professional | System Administrator & Cloud Engineer
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+      <h2>About Me</h2>
+      <p>
+        I am a dedicated and certified IT professional with over three years of experience in system administration, network management, and cloud engineering. Based in Badr City, Cairo, I have honed my expertise in Microsoft Azure, network security, and virtualization technologies.
+      </p>
+    </section>
+
+    <!-- Technical Skills -->
+    <section id="skills" class="container">
+      <h2>Technical Skills</h2>
+      <ul>
+        <li>Networking: Routers, switches, VLANs, firewalls (Cisco, Fortinet, Sophos)</li>
+        <li>System Administration: Active Directory, DNS, DHCP, file servers, PowerShell scripting, backup solutions (Veeam)</li>
+        <li>Security: Network security policies, endpoint protection, monitoring</li>
+        <li>Cloud Computing: Microsoft Azure, Office 365, VMware, Hyper-V</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="container">
+      <h2>Projects</h2>
+      <article>
+        <h3>Enterprise Network Infrastructure Overhaul</h3>
+        <p>
+          Designed and deployed a secure, high-availability network infrastructure using Cisco routers/switches, Fortinet firewalls, VLAN segmentation, and optimized DHCP/DNS configurations. This project resulted in higher uptime, reduced latency, and comprehensive documentation for compliance.
+        </p>
+      </article>
+      <article>
+        <h3>FortiGate-100E Firewall Deployment</h3>
+        <p>
+          Implemented a FortiGate-100E next-generation firewall solution with FortiOS and FortiAnalyzer for enhanced network security. Features included intrusion prevention, SSL/VPN, application control, and SD-WAN integration, leading to improved incident response times and optimized bandwidth usage.
+        </p>
+      </article>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="container">
+      <h2>Experience</h2>
+      <article>
+        <h3>System Administrator</h3>
+        <p>
+          <strong>Dar El Marasem For Police officers In Gezirah Zamalek, Cairo Governorate</strong> (May 2024 – Present)
+        </p>
+        <ul>
+          <li>Designed and maintained the network and IT infrastructure for high availability and performance.</li>
+          <li>Optimized and secured the network environment while ensuring continuous monitoring and documentation for compliance.</li>
+        </ul>
+      </article>
+      <article>
+        <h3>IT Specialist</h3>
+        <p>
+          <strong>El Mostafa for Master Batch, Badr City, Cairo Governorate</strong> (July 2022 – April 2024)
+        </p>
+        <ul>
+          <li>Managed day-to-day IT operations including troubleshooting hardware and software issues.</li>
+          <li>Implemented and monitored network infrastructure ensuring uninterrupted connectivity and technical support.</li>
+          <li>Coordinated with vendors for IT equipment procurement and maintenance.</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Education & Training -->
+    <section id="education" class="container">
+      <h2>Education & Training</h2>
+      <article>
+        <h3>Education</h3>
+        <p>
+          <strong>BSc. in Management and Information System</strong><br />
+          El Shorouk Academy, Al Shorouk City, Cairo (Aug 2019 – Sep 2023)
+        </p>
+      </article>
+      <article>
+        <h3>Training</h3>
+        <p>
+          <strong>IT-Gate Academy - IT Infrastructure</strong> (Dec 2023 – Apr 2024)
+        </p>
+        <ul>
+          <li>CCNA</li>
+          <li>MCSA</li>
+          <li>NSE4</li>
+          <li>Sophos</li>
+        </ul>
+        <p>
+          <strong>IT-Gate Academy - Azure Cloud Computing</strong>
+        </p>
+        <ul>
+          <li>Azure Fundamentals (AZ-900)</li>
+          <li>Azure Administrator Associate (AZ-104)</li>
+          <li>Azure Networking Associate (AZ-700)</li>
+          <li>Azure Security Engineer Associate (AZ-500)</li>
+          <li>Veeam</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Languages -->
+    <section id="languages" class="container">
+      <h2>Languages</h2>
+      <ul>
+        <li>Arabic: Native proficiency</li>
+        <li>English: Professional working proficiency</li>
+      </ul>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="container">
+      <h2>My CV</h2>
+      <p>
+        <a href="Yossef Mohamed Ali.pdf" target="_blank">Download My CV (PDF)</a>
+      </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>
+        Reach me at <a href="mailto:yossefali67@gmail.com">yossefali67@gmail.com</a> or call (+20) 155 304 1880.
+      </p>
+      <form id="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Yossef Mohamed Ali. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
