@@ -1076,3 +1076,10 @@ body {
     border-radius: 50%;
   }
 }
+
+/* ---------- ABOUT SECTION MOBILE POLISH ---------- */
+@media (max-width: 768px) {
+  .about-content { grid-template-columns: 1fr; gap: 2rem; }
+  .about-stats { justify-content: center; }
+  .about-img { width: 100%; margin-top: 1rem; }
+}
