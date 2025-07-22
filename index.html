@@ -36,8 +36,8 @@
     .btn-resume:hover { background: #0284c7; }
     .cv-circle{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);width:44px;height:44px;background:#0ea5e9;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1rem;transition:.3s;}
     .cv-circle:hover{background:#0284c7;}
-    .cv-tooltip{position:absolute;top:-30px;left:50%;transform:translateX(-50%);background:#0f172a;color:#fff;padding:.15rem .5rem;border-radius:4px;font-size:.7rem;opacity:0;transition:.2s;pointer-events:none;}
-    a:hover .cv-tooltip{opacity:1;}
+    .tooltip {position: absolute;bottom: -2rem;left: 50%;transform: translateX(-50%);background: rgba(15,23,42,.9);color: #fff;font-size: .7rem;padding: .2rem .6rem;border-radius: 4px;opacity: 0;transition: opacity .2s;pointer-events: none;}
+    a:hover .tooltip { opacity: 1; }
     footer{text-align:center;padding:1rem;font-size:.8rem;background:#fff;}
     @media(max-width:768px){.hero-text h1{font-size:2rem;}}
   </style>
@@ -51,10 +51,10 @@
       <h1>Yossef Mohamed Ali</h1>
       <p class="tagline">Azure-certified Systems & Network Administrator</p>
       <div class="social">
-        <a href="https://github.com/ym-ali"  aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/yossef-m-ali-ali-3999b7356/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:yossefali67@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-        <a href="Yossef%20M%20Ali.pdf" download aria-label="Download CV"><i class="fas fa-arrow-down"></i><span class="cv-tooltip">Download CV</span></a>
+        <a href="https://github.com/ym-ali"  aria-label="GitHub"><i class="fab fa-github"></i><span class="tooltip">See My Repos 🖤</span></a>
+        <a href="https://linkedin.com/in/yossef-m-ali-ali-3999b7356/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"><span class="tooltip">Check my LinkedIn 🖤</span></i></a>
+        <a href="mailto:yossefali67@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i><span class="tooltip">Mail Me 🖤</span></a>
+        <a href="Yossef%20M%20Ali.pdf" download aria-label="Download CV"><i class="fas fa-arrow-down"></i><span class="tooltip">Download CV 🖤</span></a>
       </div>
     </div>
   </header>
