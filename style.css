@@ -999,19 +999,35 @@ a.contact-item:hover {
         width: 100%;
     }
 }
-/* ----------  Mobile Hero Fix  ---------- */
+/* ----------  Mobile Hero Reset  ---------- */
 @media (max-width: 768px) {
+  html, body { overflow-x: hidden; }   /* kill any horizontal scrollbar */
+
   .hero {
-    min-height: 100vh;          /* full screen */
-    height: auto;               /* let content grow */
-    padding: 100px 20px 60px;   /* space for fixed navbar + bottom breathing room */
+    position: relative;
+    display: flex;
+    align-items: flex-start;   /* push content to top so nothing is cropped */
+    min-height: 100vh;
+    height: auto;
+    padding: 90px 20px 60px;   /* navbar (~70px) + extra */
+    box-sizing: border-box;
   }
 
   .hero-container {
-    padding: 0 15px;
+    width: 100%;
+    max-width: none;
+    padding: 0;
   }
 
+  .hero-content,
   .hero-text {
-    max-width: none;            /* remove artificial cap */
+    max-width: none;
+    width: 100%;
+    padding: 0 10px;           /* small side breathing room */
   }
+
+  /* allow natural text wrapping */
+  .name { font-size: 2.3rem; word-break: break-word; }
+  .hero-subtitle { font-size: 1.2rem; }
+  .hero-description { font-size: 1rem; }
 }
