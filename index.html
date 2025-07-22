@@ -1,227 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yossef Mohamed Ali - Portfolio</title>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <!-- Link to external CSS -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-container">
-        <a href="#" class="nav-logo">Yossef M. Ali</a>
-        <div class="hamburger" id="hamburger">
-          <i class="fas fa-bars"></i>
-        </div>
-        <div class="nav-links" id="navLinks">
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#certifications">Certifications</a>
-          <a href="#contact">Contact</a>
-          <a href="Yossef%20M.%20Ali.pdf" target="_blank">CV</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Yossef Mohamed Ali - Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    :root{--clr-bg:#f8fafc;--clr-primary:#0f172a;--clr-accent:#0ea5e9;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--clr-primary);background:var(--clr-bg);line-height:1.6;}
+    header{height:60vh;background:url("https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1350&q=80") center/cover;display:grid;place-items:center;color:#fff;position:relative;}
+    header::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55);}
+    .hero-text{position:relative;text-align:center;}
+    .hero-text h1{font-size:2.5rem;letter-spacing:1px;}
+    .tagline{font-size:1.1rem;margin-top:.5rem;opacity:.85;}
+    .social{margin-top:1rem;font-size:1.5rem;}
+    .social a{margin:0 .4rem;color:#fff;transition:.3s;}
+    .social a:hover{color:var(--clr-accent);}
+    section{padding:4rem 1rem;max-width:1000px;margin:auto;}
+    section:nth-child(even){background:#fff;}
+    h2{font-size:2rem;margin-bottom:1.5rem;text-align:center;}
+    ul{padding-left:1.2rem;margin-top:.5rem;}
+    .skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+    .skills span{background:#e2e8f0;padding:.4rem .8rem;border-radius:20px;font-size:.8rem;}
+    .timeline{position:relative;padding-left:2rem;border-left:2px solid var(--clr-accent);}
+    .timeline-item{margin-bottom:2rem;}
+    .date{color:var(--clr-accent);font-weight:600;}
+    .content h3{font-size:1.25rem;margin:.25rem 0 .5rem;}
+    .company{font-size:.9rem;opacity:.7;}
+    .contact-row{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:2rem;}
+    .contact-btn{background:var(--clr-accent);color:#fff;padding:.6rem 1.2rem;border-radius:4px;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:.3s;}
+    .contact-btn:hover{background:#0284c7;}
+    footer{text-align:center;padding:1rem;font-size:.8rem;background:#fff;}
+    @media(max-width:768px){.hero-text h1{font-size:2rem;}}
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="hero-text">
+      <h1>Yossef Mohamed Ali</h1>
+      <p class="tagline">Azure-certified Systems & Network Administrator</p>
+      <div class="social">
+        <a href="https://github.com/ym-ali"  aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/yossef-m-ali-ali-3999b7356/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:yossefali67@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Azure-certified Systems & Network Administrator with 3+ years hardening AD forests, virtualizing 200+ VMs, and cutting incident MTTR by 60 %. Proven in military-grade 24×7 environments.
+    </p>
+    <div class="skills">
+      <span>Azure</span><span>FortiGate</span><span>Cisco</span><span>VMware</span>
+      <span>PowerShell</span><span>MCSA 2019</span><span>CCNA</span><span>NSE4</span>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">May 2024 – Present</div>
+        <div class="content">
+          <h3>System Administrator</h3>
+          <p class="company">Dar El-Marasm Club For Police Officers – Military Service</p>
+          <ul>
+            <li>Administered 200-user AD forest (3×DC) with &lt;15 min GPO propagation across sites.</li>
+            <li>Migrated 8 physical servers to VMware vSphere 8; reclaimed 40 % rack space &amp; cut power draw 650 W.</li>
+            <li>Hardened 120 endpoints with Sophos EDR; achieved 0 ransomware incidents in 12 months.</li>
+            <li>Scripted nightly Veeam backups via PowerShell; RPO 30 min, RTO 1 h. Verified with quarterly DR drills.</li>
+          </ul>
         </div>
       </div>
-    </nav>
 
-    <!-- Header -->
-    <header>
-      <div class="header-bg"></div>
-      <div class="header-content">
-        <img src="pfp.png" alt="Yossef Mohamed Ali" class="profile-img" />
-        <h1>Yossef Mohamed Ali</h1>
-        <p class="title">System Administrator | Network Specialist | Cloud Engineer</p>
-        <div class="social-links">
-          <a href="https://github.com/ym-ali"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/yossef-m-ali-ali-3999b7356/"><i class="fab fa-linkedin-in"></i></a>
-          <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
-          <a href="mailto:yossefali67@gmail.com"><i class="fas fa-envelope"></i></a>
+      <div class="timeline-item">
+        <div class="date">Aug 2024 – Present</div>
+        <div class="content">
+          <h3>IT Consultant</h3>
+          <p class="company">Self-Employment, Cairo</p>
+          <ul>
+            <li>Deployed FortiGate-100E next-gen firewall; reduced incident triage time from 45 min to 6 min.</li>
+            <li>Lift-and-shift 3-tier .NET app to Azure (App Service + SQL MI); cut monthly Azure spend 38 %.</li>
+            <li>Built Azure Landing Zone hub-spoke topology with zero policy-drift incidents.</li>
+          </ul>
         </div>
       </div>
-    </header>
 
-    <!-- About Section -->
-    <section id="about">
-      <div class="container">
-        <div class="section-title">
-          <h2>About Me</h2>
-        </div>
-        <div class="about-content">
-          <div class="about-text">
-            <h3>Dedicated IT Professional</h3>
-            <p>
-              I am a certified IT professional with over three years of experience in system administration, network management, and cloud engineering. Based in Cairo, Egypt, I specialize in Microsoft Azure, network security, and virtualization technologies.
-            </p>
-            <p>
-              My passion for technology drives me to optimize IT infrastructures and implement secure, high-availability systems.
-            </p>
-            <div class="skills">
-              <span class="skill">Azure</span>
-              <span class="skill">VMware</span>
-              <span class="skill">Active Directory</span>
-              <span class="skill">Cisco</span>
-              <span class="skill">Fortinet</span>
-              <span class="skill">PowerShell</span>
-            </div>
-          </div>
-          <div class="about-img">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="IT Infrastructure" />
-          </div>
+      <div class="timeline-item">
+        <div class="date">Jul 2022 – Apr 2024</div>
+        <div class="content">
+          <h3>IT Specialist</h3>
+          <p class="company">El Mostafa for Master Batch, Badr City</p>
+          <ul>
+            <li>Maintained MikroTik-based WAN ensuring 99.9 % uptime across three plants.</li>
+            <li>Introduced documentation SOPs that cut ticket resolution time by 30 %.</li>
+          </ul>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="bg-light">
-      <div class="container">
-        <div class="section-title">
-          <h2>Professional Experience</h2>
-        </div>
-        <div class="experience-timeline">
-          <div class="experience-item">
-            <span class="experience-date">May 2024 – Present</span>
-            <h3 class="experience-title">System Administrator</h3>
-            <p class="experience-company">Dar El Marasem For Police Officers, Cairo</p>
-            <div class="experience-description">
-              <ul>
-                <li>Designed and maintained a high-availability IT infrastructure.</li>
-                <li>Optimized network environment and ensured continuous security.</li>
-                <li>Documented network configurations and maintenance schedules for compliance.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="experience-item">
-            <span class="experience-date">July 2022 – April 2024</span>
-            <h3 class="experience-title">IT Specialist</h3>
-            <p class="experience-company">El Mostafa for Master Batch, Badr City</p>
-            <div class="experience-description">
-              <ul>
-                <li>Managed day-to-day IT operations and troubleshooting.</li>
-                <li>Implemented and maintained network infrastructure for uninterrupted connectivity.</li>
-                <li>Provided technical support and training for staff.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- EDUCATION & CERTS -->
+  <section id="education">
+    <h2>Education & Certifications</h2>
+    <p><strong>BSc. Management & Information Systems</strong> – El Shorouk Academy (2019-2023)</p>
+    <p><strong>IT-Gate Academy</strong></p>
+    <ul>
+      <li>IT Infrastructure – CCNA 200-301, MCSA 2019, NSE4, Sophos XG (Dec 2023 – Apr 2024)</li>
+      <li>Azure Cloud – AZ-900, AZ-104, AZ-700, AZ-500, Veeam VMCE (Mar-Jul 2025)</li>
+    </ul>
+    <p>
+      <a href="https://www.credly.com/users/yossef-m-ali" target="_blank" style="color:var(--clr-accent);">View all digital badges on Credly →</a>
+    </p>
+  </section>
 
-    <!-- Education & Training Section -->
-    <section id="education">
-      <div class="container">
-        <div class="section-title">
-          <h2>Education & Training</h2>
-        </div>
-        <div class="edu-item">
-          <h3>BSc. in Management and Information System</h3>
-          <p>El Shorouk Academy, Cairo (Aug 2019 – Sep 2023)</p>
-        </div>
-        <div class="edu-item">
-          <h3>IT-Gate Academy - IT Infrastructure</h3>
-          <p>Training Topics: CCNA, MCSA, NSE4, Sophos (Dec 2023 – Apr 2024)</p>
-          <h3>IT-Gate Academy - Azure Cloud Computing</h3>
-          <p>Training Topics: AZ-900, AZ-104, AZ-700, AZ-500, Veeam</p>
-        </div>
-      </div>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Get In Touch</h2>
+    <div class="contact-row">
+      <a class="contact-btn" href="mailto:yossefali67@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+      <a class="contact-btn" href="https://linkedin.com/in/yossef-m-ali-ali-3999b7356/"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+      <a class="contact-btn" href="https://github.com/ym-ali"><i class="fab fa-github"></i> GitHub</a>
+    </div>
+  </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="bg-light">
-      <div class="container">
-        <div class="section-title">
-          <h2>Certifications</h2>
-        </div>
-        <div class="certifications-grid">
-          <!-- Example Certification Card -->
-          <div class="cert-card">
-            <div class="cert-header">
-              <h3 class="cert-title">Azure Administrator Associate</h3>
-              <p class="cert-issuer">Microsoft</p>
-            </div>
-            <div class="cert-body">
-              <span class="cert-date">December 2022</span>
-              <span class="cert-id">License: MS0987654321</span>
-              <p>Implemented, managed, and monitored cloud identity, governance, and virtual networks.</p>
-              <a href="#" class="cert-link"><i class="fas fa-external-link-alt"></i> Verify Credential</a>
-            </div>
-          </div>
-          <!-- Add more certification cards as needed -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Get In Touch</h2>
-        </div>
-        <div class="contact-container">
-          <div class="contact-info">
-            <div class="contact-card">
-              <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div>
-                <h3>Email</h3>
-                <p>yossefali67@gmail.com</p>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="contact-icon">
-                <i class="fas fa-phone"></i>
-              </div>
-              <div>
-                <h3>Phone</h3>
-                <p>+20 155 304 1880</p>
-              </div>
-            </div>
-            <div class="contact-card">
-              <div class="contact-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div>
-                <h3>Location</h3>
-                <p>Cairo, Egypt</p>
-              </div>
-            </div>
-          </div>
-          <div class="contact-form">
-            <!-- Formspree-based Contact Form -->
-            <form id="contactForm" action="https://formspree.io/f/xblgawqe" method="POST">
-              <div class="form-group">
-                <label for="email">Your email:</label>
-                <input type="email" id="email" name="email" required />
-              </div>
-              <div class="form-group">
-                <label for="message">Your message:</label>
-                <textarea id="message" name="message" required></textarea>
-              </div>
-              <button type="submit" class="submit-btn">Send</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2023 Yossef Mohamed Ali. All Rights Reserved.</p>
-        <div class="footer-links">
-          <!-- <a href="#">Privacy Policy</a> -->
-          <!-- <a href="#">Terms of Service</a> -->
-          <a href="https://ym-ali.github.io/sitemap.xml">Sitemap</a>
-        </div>
-        <p>Designed with ❤️ by Yossef Mohamed Ali</p>
-      </div>
-    </footer>
-
-    <!-- Link to external JavaScript -->
-    <script src="script.js"></script>
-  </body>
+  <footer>
+    © 2024 Yossef Mohamed Ali. All rights reserved.
+  </footer>
+</body>
 </html>
