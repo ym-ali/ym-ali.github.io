@@ -1066,3 +1066,13 @@ body {
 .timeline-item::before {
   box-shadow: 0 0 6px var(--primary);
 }
+
+/* ---------- PERFECT CIRCLES ON MOBILE ---------- */
+@media (max-width: 768px) {
+  .timeline-item::before {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;          /* stops shrinking */
+    border-radius: 50%;
+  }
+}
