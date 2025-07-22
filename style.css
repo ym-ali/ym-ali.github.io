@@ -50,10 +50,10 @@ body {
     color: #00d4ff;
 }
 
-.nav-menu {
+/* .nav-menu {
     display: flex;
     gap: 2rem;
-}
+}*/
 
 .nav-link {
     color: #ffffff;
