@@ -964,7 +964,22 @@ a.contact-item:hover {
 /* ----------  Mobile Hero Reset  ---------- */
 @media (max-width: 768px) {
   html, body { overflow-x: hidden; }   /* kill any horizontal scrollbar */
-
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   /* centers vertically */
+    gap: 2rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
   .hero {
     position: relative;
     display: flex;
@@ -976,7 +991,20 @@ a.contact-item:hover {
     padding: 90px 20px 60px;   /* navbar (~70px) + extra */
     box-sizing: border-box;
   }
+  .nav-menu.active {
+    right: 0;
+  }
+      .nav-link {
+    color: #00d4ff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
 
+  .nav-link:hover {
+    color: #ffffff;
+  }
   .hero-container {
     width: 100%;
     max-width: none;
