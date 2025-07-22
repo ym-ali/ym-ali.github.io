@@ -999,3 +999,19 @@ a.contact-item:hover {
         width: 100%;
     }
 }
+/* ----------  Mobile Hero Fix  ---------- */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;          /* full screen */
+    height: auto;               /* let content grow */
+    padding: 100px 20px 60px;   /* space for fixed navbar + bottom breathing room */
+  }
+
+  .hero-container {
+    padding: 0 15px;
+  }
+
+  .hero-text {
+    max-width: none;            /* remove artificial cap */
+  }
+}
