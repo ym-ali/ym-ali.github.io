@@ -36,44 +36,6 @@
             </div>
         </div>
     </nav>
-
-<!-- ==========  Hacker Typewriter  ========== -->
-<style>
-  @keyframes blink {
-    0%, 100% { border-color: #00d4ff; }
-    50%       { border-color: transparent; }
-  }
-  .typewriter {
-    font-family: 'Courier New', monospace;
-    border-right: 2px solid #00d4ff;   /* the caret */
-    white-space: pre-wrap;
-    overflow: hidden;
-    animation: blink 0.7s infinite;
-  }
-</style>
-
-<script>
-  (function () {
-    const el   = document.querySelector('.hero-subtitle');
-    const text = `IT Infrastructure & Cloud Computing Professional
-Dedicated IT professional with over 3 years of experience in system administration, network management, and cloud engineering. Specialized in optimizing IT infrastructure and driving operational excellence.`;
-    let i = 0;
-
-    el.textContent = '';          // wipe static text
-    el.classList.add('typewriter');
-
-    function type() {
-      if (i < text.length) {
-        el.textContent += text.charAt(i);
-        i++;
-        setTimeout(type, 30);   // 30 ms per char ≈ “hacker speed”
-      } else {
-        setTimeout(() => el.style.borderRight = 'none', 1500); // caret off
-      }
-    }
-    type();
-  })();
-</script>
     
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -432,6 +394,43 @@ Dedicated IT professional with over 3 years of experience in system administrati
             </div>
         </div>
     </footer>
+<!-- ==========  Hacker Typewriter  ========== -->
+<style>
+  @keyframes blink {
+    0%, 100% { border-color: #00d4ff; }
+    50%       { border-color: transparent; }
+  }
+  .typewriter {
+    font-family: 'Courier New', monospace;
+    border-right: 2px solid #00d4ff;   /* the caret */
+    white-space: pre-wrap;
+    overflow: hidden;
+    animation: blink 0.7s infinite;
+  }
+</style>
+
+<script>
+  (function () {
+    const el   = document.querySelector('.hero-subtitle');
+    const text = `IT Infrastructure & Cloud Computing Professional
+Dedicated IT professional with over 3 years of experience in system administration, network management, and cloud engineering. Specialized in optimizing IT infrastructure and driving operational excellence.`;
+    let i = 0;
+
+    el.textContent = '';          // wipe static text
+    el.classList.add('typewriter');
+
+    function type() {
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 30);   // 30 ms per char ≈ “hacker speed”
+      } else {
+        setTimeout(() => el.style.borderRight = 'none', 1500); // caret off
+      }
+    }
+    type();
+  })();
+</script>
 
     <script src="script.js"></script>
 </body>
