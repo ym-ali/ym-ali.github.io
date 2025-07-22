@@ -120,13 +120,13 @@ function typeWriter(element, text, speed = 100) {
 }
 
 // Initialize typing animation when page loads
-window.addEventListener('load', () => {
-    const nameElement = document.querySelector('.name');
-    if (nameElement) {
-        const originalText = nameElement.textContent;
-        typeWriter(nameElement, originalText, 80);
-    }
-});
+//window.addEventListener('load', () => {
+  //  const nameElement = document.querySelector('.name');
+    //if (nameElement) {
+      //  const originalText = nameElement.textContent;
+        //typeWriter(nameElement, originalText, 80);
+//    }
+// });
 
 // Contact form handling
 const contactForm = document.getElementById('contactForm');
