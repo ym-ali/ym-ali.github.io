@@ -101,7 +101,7 @@ body {
     min-height: 60vh;
     display: flex;
     align-items: center;
-    background: url("https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1350&q=80   ") center/cover;
+    background: url("https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=1350&q=80") center/cover;
     position: relative;
     overflow: hidden;
 }
