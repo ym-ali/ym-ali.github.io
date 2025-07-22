@@ -968,7 +968,9 @@ a.contact-item:hover {
   .hero {
     position: relative;
     display: flex;
-    align-items: flex-start;   /* push content to top so nothing is cropped */
+    align-items: center;   /* push content to top so nothing is cropped */
+    flex-direction: column;
+    justify-content: center;   
     min-height: 100vh;
     height: auto;
     padding: 90px 20px 60px;   /* navbar (~70px) + extra */
